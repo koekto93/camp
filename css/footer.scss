@@ -1,0 +1,53 @@
+.l-footer {
+  background-color: #1a1a1a;
+  &__content {
+    display: flex;
+    flex-direction: row;
+    padding: 41px 0 66px 56px;
+
+    & > .c-links-column {
+      margin-right: 20px;
+    }
+  }
+
+  &__logo {
+    margin-right: 58px;
+  }
+}
+
+.c-links-column {
+  width: 158px;
+  &__header {
+    @extend %bold-font;
+    height: 34px;
+    font-size: 15px;
+    color: #ffffff;
+    margin-bottom: 11px;
+  }
+
+  &__block {
+    @include set-link-color(#ffffff);
+    @extend %regular-font;
+    text-align: start;
+    opacity: 0.6;
+    color: #ffffff;
+
+    & > div:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__item-with-icons-block {
+    margin-top: 19px;
+  }
+
+  &__icons-block {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+
+    & > div:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
+}

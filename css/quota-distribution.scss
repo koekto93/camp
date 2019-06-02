@@ -1,0 +1,25 @@
+.l-quota-distribution {
+  background-color: #006363;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 71px 0 60px;
+  }
+
+  &__headline {
+    @extend %section-font !optional;
+    font-size: 25px;
+    line-height: normal;
+    text-align: start;
+    color: #f7f7f7;
+    margin-bottom: 20px;
+  }
+
+  &__caption {
+    @extend %regular-font;
+    line-height: 1.5;
+    color: #f7f7f7;
+  }
+}

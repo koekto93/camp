@@ -1,0 +1,57 @@
+.l-preparation-for-trip {
+  &__content {
+    margin-top: 31px;
+    display: flex;
+    flex-direction: row;
+    padding-right: 45px;
+    @extend %card-border-with-shadow;
+  }
+
+  &__caption {
+    @extend %section-font !optional;
+    font-size: 15px;
+    line-height: 1.47;
+    text-align: start;
+    color: #313131;
+    margin-bottom: 14px;
+  }
+
+  &__description {
+    @extend %regular-font !optional;
+    font-size: 15px;
+    text-align: start;
+    color: #313131;
+    margin-bottom: 31px;
+  }
+
+  &__image {
+    width: 710px;
+    height: 435px;
+    margin-right: 9px;
+    border-radius: 6px 0 0 6px;
+    background-image: url('../../images/kids.jpg');
+  }
+
+  &__info {
+    width: 308px;
+    margin-top: 136px;
+  }
+
+  &__links-block {
+    @include set-link-color(#8e8e93);
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px;
+
+    & > article:not(:last-child) {
+      margin-bottom: 17px;
+    }
+  }
+}
+
+.c-preparation-link-item {
+  @extend %regular-font !optional;
+  text-align: start;
+  padding-bottom: 17px;
+  border-bottom: solid 1px rgba(151, 151, 151, 0.18);
+}

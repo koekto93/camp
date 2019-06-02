@@ -1,0 +1,36 @@
+.l-frequently-questions {
+  &__content {
+    padding-top: 41px;
+  }
+
+  &__questions-block {
+    @extend %card-border !optional;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 27px;
+    padding: 40px 38px 0 44px;
+
+    & > article {
+      width: 273px;
+
+      & > div {
+        padding: 0 20px 40px 20px;
+      }
+    }
+
+    .c-question-item__top {
+      border-bottom: solid 1px rgba(151, 151, 151, 0.18);
+      margin-bottom: 47px;
+    }
+
+    & .c-caption {
+      font-size: 12px;
+      line-height: 1.25;
+      letter-spacing: normal;
+      text-align: center;
+      color: #1b1e2d;
+      margin-bottom: 11px;
+    }
+  }
+}

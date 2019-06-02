@@ -1,0 +1,35 @@
+.l-wellness-company {
+  background-color: #f7f7f7;
+
+  &__content {
+    padding: 39px 0 31px;
+  }
+  &__items {
+    display: flex;
+    flex-direction: row;
+
+    & > article {
+      min-height: 378px;
+    }
+
+    & > article:not(:last-child) {
+      margin-right: 11px;
+    }
+  }
+
+  & .c-caption {
+    margin-bottom: 20px;
+  }
+
+  &__headline {
+    @extend %section-font !optional;
+    font-size: 25px;
+    line-height: 1.36;
+    text-align: start;
+    margin-bottom: 20px;
+  }
+
+  &__first-stage {
+    margin-bottom: 34px;
+  }
+}

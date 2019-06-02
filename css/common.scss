@@ -1,0 +1,545 @@
+$image_dir: '../../images/';
+$color-text-link: #e3775b;
+
+%section-font {
+  font-family: Intro;
+  font-size: 15px;
+  line-height: 1.6;
+  text-align: center;
+  color: #1a1a1a;
+}
+
+%regular-font {
+  font-family: PTSans-Regular;
+  font-size: 12px;
+  text-align: center;
+  color: #1b1e2d;
+}
+
+%bold-font {
+  font-family: PTSans-Bold;
+  font-size: 12px;
+  color: #f7f7f7;
+}
+
+%border-bottom {
+  border-bottom: 1px solid rgba(151, 151, 151, 0.18);
+}
+
+@mixin vertical-bar($height, $color) {
+  height: $height;
+  border-left: 1px solid $color;
+}
+
+@mixin horizontal-bar($height, $color) {
+  height: $height;
+  border-top: 1px solid $color;
+}
+
+body {
+  width: 1280px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  .content {
+    flex: 1 0 auto;
+  }
+
+  footer {
+    flex: 0 0 auto;
+  }
+
+  header,
+  .content > div,
+  footer {
+    @extend %page-section !optional;
+  }
+}
+
+.text-link {
+  color: $color-text-link;
+}
+
+%page-section {
+  width: 100%;
+  padding: 0 105px;
+  margin: 0 auto;
+}
+
+%image-wrapper {
+  background-size: cover;
+  overflow: hidden;
+}
+
+@mixin svg-icon($width, $height, $name, $color) {
+  width: $width;
+  height: $height;
+  background-color: $color;
+  -webkit-mask-image: url($image_dir+$name+'.svg');
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 100%;
+  mask-image: url($image_dir+$name+'.svg');
+  mask-repeat: no-repeat;
+  mask-size: 100%;
+}
+
+/* .c-svg-icon {
+  $width: attr(data-width);
+  $height: attr(data-height);
+  $name: attr(data-name);
+  $color: attr(data-color);
+
+  @include svg-icon($width, $height, $name, $color);
+} */
+
+@mixin set-link-color($color) {
+  & a {
+    text-decoration: none;
+  }
+  & a:link {
+    color: $color;
+  }
+  & a:visited {
+    color: $color;
+  }
+  & a:hover {
+    color: $color;
+  }
+  & a:active {
+    color: $color;
+  }
+}
+
+@mixin vertical-bar($height, $color) {
+  height: $height;
+  border-left: 1px solid $color;
+}
+
+%hidden-absolute-block {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #bfbfbf;
+  opacity: 0;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  -moz-transition: opacity 0.2s ease-in-out;
+  -ms-transition: opacity 0.2s ease-in-out;
+  -o-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
+}
+
+%card-border {
+  border-radius: 3px;
+  border: solid 1px #eeeeee;
+}
+
+%card-border-with-shadow {
+  border-radius: 6px;
+  box-shadow: 0 2px 4px 0 rgba(151, 151, 151, 0.41);
+}
+
+.c-button {
+  border-radius: 6px;
+  border: solid 1px #e3775b;
+  padding: 9px 0;
+  font-family: PTSans-Regular;
+  font-size: 11px;
+  letter-spacing: 0.1px;
+  color: #1a1a1a;
+  width: 100%;
+}
+
+.c-caption {
+  @extend %section-font;
+  text-align: start;
+}
+
+.c-description {
+  @extend %regular-font;
+}
+
+//Иконка с подписью
+.c-caption-with-icon {
+  @extend %section-font;
+
+  display: flex;
+
+  &_row {
+    flex-direction: row;
+    .c-caption-with-icon__icon {
+      margin-right: 12px;
+    }
+  }
+  &_column {
+    flex-direction: column;
+    .c-caption-with-icon__icon {
+      margin-bottom: 13px;
+    }
+  }
+}
+
+//----card-with-icon style start
+.c-card-with-icon-item {
+  @extend %card-border;
+  width: 349px;
+  height: 100%;
+  min-height: 224px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding: 38px 60px 52px 60px;
+
+  ul {
+    list-style-type: disc;
+    padding: 0;
+    margin: 10px 0 0 30px;
+
+    & li:not(:last-child) {
+      margin-bottom: 10px;
+    }
+    & li span {
+      position: relative;
+      left: -0.5em;
+    }
+  }
+
+  &__icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    border: solid 0.5px #979797;
+  }
+
+  &__caption {
+    @extend %section-font;
+    font-size: 12px;
+
+    &_front {
+      margin-top: 18px;
+    }
+  }
+
+  &__description {
+    @extend %regular-font;
+    width: 223px;
+    margin-top: 11px;
+
+    &_mono {
+      margin-top: 23px;
+    }
+  }
+
+  &__back {
+    @extend %hidden-absolute-block;
+    background-color: #f7f7f7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 44px;
+  }
+
+  &_double {
+    & > div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__first-part {
+    margin-bottom: 36px;
+  }
+
+  &:hover {
+    .c-card-with-icon-item__back {
+      opacity: 1;
+    }
+  }
+
+  &__text {
+    font-family: PTSans-Regular;
+    line-height: normal;
+    width: 223px;
+    height: 84px;
+    text-align: center;
+    font-size: 12px;
+    margin-top: 12px;
+  }
+}
+//----card-with-icon style end
+
+/* ---- arrival-item start ----- */
+.c-arrival-item {
+  @extend %card-border-with-shadow;
+  @extend %regular-font;
+  padding: 20px 19px 12px 19px;
+  width: 349px;
+  &__date-block {
+    display: flex;
+    flex-direction: row;
+    color: #8e8e93;
+    padding-bottom: 19px;
+    @extend %border-bottom;
+  }
+
+  &__date {
+    color: $color-text-link;
+    margin-right: 5px;
+  }
+
+  &__place {
+    text-align: start;
+    margin-top: 19px;
+    display: flex;
+    flex-direction: column;
+  }
+  &__address {
+    font-size: 15px;
+    color: #313131;
+    margin-bottom: 10px;
+  }
+  &__city {
+    @extend %section-font;
+    font-size: 13px;
+    color: #313131;
+    text-align: start;
+  }
+}
+/* ---- arrival-item end ----- */
+
+/* ---- offer-card-item start ----- */
+
+//State 1: dots, for kids, age limit top
+//State 2: for kids, age limit bottom
+//State 3: age limit bottom
+.c-offer-card-item {
+  @extend %card-border-with-shadow;
+  border-radius: 0px 0px 6px 6px;
+  position: relative;
+  width: 350px;
+
+  &_state-1 {
+    .c-offer-card-item__dots {
+      display: flex;
+    }
+    .c-offer-card-item__for-kids {
+      display: flex;
+    }
+    .c-offer-card-item__age-limit_top {
+      display: flex !important;
+    }
+
+    .c-offer-card-item__bottom-info {
+      margin-top: 7px;
+    }
+  }
+
+  &_state-2 {
+    .c-offer-card-item__for-kids {
+      display: flex;
+    }
+    .c-offer-card-item__age-limit_bottom {
+      display: flex !important;
+    }
+  }
+
+  &_state-3 {
+    .c-offer-card-item__age-limit_bottom {
+      display: flex !important;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 198px;
+
+    & img {
+      max-width: 100%;
+      height: 198px;
+    }
+  }
+
+  &__top-info {
+    padding-bottom: 20px;
+    @extend %border-bottom;
+  }
+
+  &__caption {
+    @extend %section-font;
+    line-height: 1.47;
+    text-align: start;
+    margin-bottom: 10px;
+  }
+
+  &__city {
+    @extend %regular-font;
+    font-size: 15px;
+    text-align: start;
+    color: #9b9b9b;
+  }
+
+  &__bottom-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+    padding-top: 19px;
+  }
+
+  &__coast {
+    @extend %regular-font;
+    font-size: 15px;
+    text-align: start;
+    color: #313131;
+    display: flex;
+    align-items: center;
+  }
+
+  &__dots {
+    display: none;
+
+    & > span {
+      width: 10px;
+      height: 10px;
+      border-radius: 5px;
+      background-color: #e3775b;
+
+      //hide text
+      text-indent: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    & > span:not(:last-child) {
+      margin-right: 4px;
+    }
+  }
+
+  &__age-limit {
+    display: none !important;
+    border: 1px solid #313131 !important;
+    background-color: rgba(255, 255, 255, 0.3) !important;
+
+    &_top {
+      position: absolute;
+      top: 20px;
+      right: 24px;
+    }
+  }
+
+  &__for-kids {
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    width: 127px;
+    height: 26px;
+    border-radius: 3px;
+    background-color: #e3775b;
+
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    @extend %regular-font;
+    font-size: 11px;
+    letter-spacing: 0.9px;
+    text-align: center;
+    color: #ffffff;
+  }
+}
+
+.l-offer-card-item-info {
+  padding: 23px 23px 21px 18px;
+}
+/* ---- offer-card-item end ----- */
+
+/* ---- vertical-news-with-img start ----- */
+.l-vertical-news-with-img {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+
+  &__image {
+    width: 100%;
+    height: 193px;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 23px;
+    & img {
+      max-width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    padding-left: 4px;
+
+    & > article {
+      padding: 28px 0;
+    }
+
+    & > article:not(:last-child) {
+      @extend %border-bottom;
+    }
+  }
+
+  &__button {
+    margin: 0 auto;
+    & > button {
+      width: 137px;
+    }
+  }
+}
+/* ---- vertical-news-with-img end ----- */
+
+//1 блок новости
+.c-news-item {
+  display: flex;
+  flex-direction: row;
+  font-family: PTSans-Regular;
+  font-size: 12px;
+  line-height: 1.58;
+  color: #8e8e93;
+
+  &__date-block {
+    height: 35px;
+    display: flex;
+    flex-direction: column;
+    margin-right: 23px;
+  }
+
+  &__date {
+    color: #e3775b;
+  }
+
+  &__text {
+    width: 266px;
+    font-size: 14px;
+    line-height: normal;
+    color: #1a1a1a;
+  }
+}
+
+//возратное ограничение
+.c-age-limit {
+  @extend %regular-font;
+  font-size: 11px;
+  width: 28px;
+  height: 28px;
+  border-radius: 14px;
+  border: 1px solid #ffffff;
+  background-color: rgba(0, 0, 0, 0.21);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

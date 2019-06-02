@@ -1,0 +1,84 @@
+.l-main-news-reviews-top-offers {
+  display: flex;
+  flex-direction: row;
+
+  &__left-side {
+    margin-right: 10px;
+  }
+  &__right-side {
+    margin-bottom: 29px;
+  }
+}
+
+//блок с видео отзывами
+.l-video-reviews {
+  &__content {
+    display: flex;
+    margin-top: 23px;
+  }
+
+  &__image {
+    width: 350px;
+    height: 289px;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-right: 10px;
+    & img {
+      max-width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__info-block {
+    width: 348px;
+  }
+
+  &__text-block {
+    margin-bottom: 53px;
+    & > div:not(:last-child) {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__text {
+    @extend %bold-font !optional;
+    font-size: 14px;
+    color: #8e8e93;
+  }
+
+  &__chats-caption {
+    @extend %regular-font !optional;
+    text-align: start;
+  }
+
+  &__chat-icons {
+    display: flex;
+    margin-top: 17px;
+
+    & > div:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+  &__chat-item {
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    border: solid 1px #979797;
+    background-color: #ffffff;
+  }
+}
+
+//блок лучших предложений
+
+.l-top-offers {
+  margin-top: 59px;
+  &__content {
+    display: flex;
+    margin-top: 23px;
+
+    & div:first-child {
+      margin-right: 10px;
+    }
+  }
+}

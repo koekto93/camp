@@ -1,0 +1,92 @@
+.l-recommendations {
+  &__content {
+    padding: 41px 0 59px;
+  }
+  &__recommendations-block {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+  }
+}
+
+.c-recommendations-card-item {
+  width: 349px;
+  height: 435px;
+  border-radius: 6px;
+  background-image: url('../../images/moon.jpg');
+  padding: 20px 20px 10px 20px;
+
+  &__header {
+    @extend %regular-font !optional;
+    text-align: start;
+    color: #f7f7f7;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 19px;
+    border-bottom: 1px solid #f7f7f7;
+  }
+
+  &__date {
+    font-size: 15px;
+  }
+
+  /* &__age {
+    font-size: 11px;
+    width: 28px;
+    height: 28px;
+    border-radius: 14px;
+    border: 1px solid #ffffff;
+    background-color: rgba(0, 0, 0, 0.21);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  } */
+
+  &__caption {
+    @extend %section-font !optional;
+    line-height: 1.47;
+    color: #f7f7f7;
+    text-align: start;
+    margin-top: 31px;
+  }
+
+  &__description {
+    @extend %regular-font !optional;
+    font-size: 15px;
+    text-align: start;
+    color: #f7f7f7;
+    margin: 10px 0 16px;
+  }
+
+  &__categories {
+    @extend %regular-font !optional;
+    display: flex;
+    justify-content: center;
+    margin-top: 85px;
+
+    & > button {
+      width: 90px;
+      height: 21px;
+      border: 0.5px solid #ffffff;
+      background-color: rgba(0, 0, 0, 0.3);
+      color: #ffffff;
+      font-size: 10px;
+    }
+
+    & > button:first-child {
+      margin-right: 10px;
+    }
+  }
+
+  & .c-caption-with-icon__icon {
+    margin-right: 9px;
+
+    & > img {
+      filter: invert(100%);
+    }
+  }
+  & span {
+    @extend %bold-font !optional;
+  }
+}

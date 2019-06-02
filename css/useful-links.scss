@@ -1,0 +1,30 @@
+.l-useful-links {
+  &__content {
+    padding: 40px 0 38px;
+  }
+
+  &__links-block {
+    @include set-link-color(#1b1e2d);
+    display: flex;
+    flex-direction: row;
+    margin-top: 25px;
+
+    & > section:first-child {
+      margin-right: 11px;
+    }
+  }
+  &__links-column {
+    & > div:not(:first-child) {
+      margin-top: 9px;
+    }
+  }
+}
+
+.c-link-item {
+  @extend %regular-font;
+  font-size: 14px;
+  text-align: start;
+  width: 530px;
+  padding-bottom: 9px;
+  border-bottom: solid 1px rgba(151, 151, 151, 0.18);
+}
