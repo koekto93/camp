@@ -1,4 +1,4 @@
-$image_dir: '../../images/';
+$image_dir: "../../images/";
 $color-text-link: #e3775b;
 
 %section-font {
@@ -76,10 +76,10 @@ body {
   width: $width;
   height: $height;
   background-color: $color;
-  -webkit-mask-image: url($image_dir+$name+'.svg');
+  -webkit-mask-image: url($image_dir+$name+".svg");
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-size: 100%;
-  mask-image: url($image_dir+$name+'.svg');
+  mask-image: url($image_dir+$name+".svg");
   mask-repeat: no-repeat;
   mask-size: 100%;
 }
@@ -150,6 +150,7 @@ body {
   letter-spacing: 0.1px;
   color: #1a1a1a;
   width: 100%;
+  background: transparent;
 }
 
 .c-caption {

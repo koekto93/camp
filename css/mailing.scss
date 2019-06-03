@@ -1,0 +1,14 @@
+.l-mailing {
+  background-color: #69268c;
+
+  &__content {
+    & .c-caption-with-icon {
+      font-size: 19px;
+      color: #fad100;
+    }
+
+    & .c-form-group label {
+      color: #ffffff;
+    }
+  }
+}

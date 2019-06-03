@@ -130,3 +130,14 @@
 }
 
 /* ------arrival information block end------ */
+
+.c-form-hint {
+  font-family: PTSans-Regular;
+  font-size: 13px;
+  color: #666666;
+
+  &__link {
+    color: #e3775b;
+    cursor: pointer;
+  }
+}

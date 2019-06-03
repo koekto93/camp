@@ -10,6 +10,7 @@ input {
   display: block;
   width: 300px;
   border: none;
+  background: transparent;
   border-bottom: 1px solid #eeeeee;
 }
 input:focus {
@@ -46,7 +47,7 @@ input:valid ~ label {
 }
 .c-form-group__bar:before,
 .c-form-group__bar:after {
-  content: '';
+  content: "";
   height: 2px;
   width: 0;
   bottom: 0;
@@ -67,15 +68,4 @@ input:valid ~ label {
 input:focus ~ .c-form-group__bar:before,
 input:focus ~ .c-form-group__bar:after {
   width: 50%;
-}
-
-.c-form-hint {
-  font-family: PTSans-Regular;
-  font-size: 13px;
-  color: #666666;
-
-  &__link {
-    color: #e3775b;
-    cursor: pointer;
-  }
 }
